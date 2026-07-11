@@ -47,6 +47,39 @@ agents:
     adapter:
       type: claude
       model: claude-sonnet-5
+  web-engineer:
+    adapter:
+      type: claude
+      model: claude-sonnet-5
+  analyst:
+    adapter:
+      type: claude
+      model: claude-opus-4-8
+    inputs:
+      env:
+        ZERNIO_API_KEY:
+          kind: secret
+          requirement: required
+        LOOPS_API_KEY:
+          kind: secret
+          requirement: required
+  support:
+    adapter:
+      type: claude
+      model: claude-sonnet-5
+  librarian:
+    adapter:
+      type: claude
+      model: claude-sonnet-5
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
 
 # Heartbeat routines (scheduled operations). Filled in Task 10.
 routines: {}
