@@ -1,7 +1,11 @@
 schema: paperclip/v1
 
 # LLM adapters, one per agent. Filled in Tasks 4-8.
-agents: {}
+agents:
+  gm:
+    adapter:
+      type: claude
+      model: claude-opus-4-8
 
 # Heartbeat routines (scheduled operations). Filled in Task 10.
 routines: {}
