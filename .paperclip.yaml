@@ -170,4 +170,34 @@ routines:
         timezone: America/New_York
 
 # Human approval gates. Filled in Task 11.
-approval_policies: {}
+approval_policies:
+  burst-package:
+    description: The 8-week Burst Package (calendar, imagery, sequences, experiments, outreach, spend) requires founder approval before activation.
+    applies_to:
+      tasks:
+        - activate-burst
+      agents:
+        - cmo
+    requires: founder
+  strategy-launch:
+    description: No strategy launches without founder approval.
+    applies_to:
+      tasks:
+        - launch-strategy
+      events:
+        - strategy.launched
+    requires: founder
+  money-out:
+    description: Any spend (ads, tools beyond the manifest) requires founder approval.
+    applies_to:
+      tasks:
+        - spend-request
+    requires: founder
+  outreach-campaign:
+    description: Outreach target lists and templates require founder approval; sends are then autopilot within the approved template.
+    applies_to:
+      tasks:
+        - run-outreach-campaign
+      agents:
+        - partnerships-pr
+    requires: founder
