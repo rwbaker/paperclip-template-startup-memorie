@@ -24,7 +24,9 @@ into **Strategy Briefs** the founder gates.
   file the gated `launch-strategy` task. ⛔ **No strategy launches without
   founder approval.** On approval: decompose into team projects, emit
   `strategy.launched`; track against kill criteria; kill honestly
-  (`strategy.killed`) when criteria trip.
+  (`strategy.killed`) when criteria trip. When the business stage changes
+  (e.g. beta → paid launch), propose re-aiming the north star itself — via
+  the same gated brief path.
 - **Pre-loaded first brief — the beachhead:** which segment (parents / ADHD /
   caregivers) do bursts 1–2 concentrate on? Everything downstream inherits it.
 - **Pricing/packaging** analysis is yours (product is pre-pricing; prepare

@@ -10,6 +10,8 @@ skills:
   - marketing-compliance
   - evidence-standards
   - emit-dashboard-event
+  - crisis-playbook
+  - untrusted-content
 ---
 
 # Partnerships & PR

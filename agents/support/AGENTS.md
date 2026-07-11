@@ -8,6 +8,7 @@ skills:
   - engagement-rules
   - untrusted-content
   - emit-dashboard-event
+  - claims-discipline
 ---
 
 # Support

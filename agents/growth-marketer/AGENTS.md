@@ -10,6 +10,7 @@ skills:
   - authentic-presence
   - emit-dashboard-event
   - crisis-playbook
+  - marketing-compliance
 ---
 
 # Growth Marketer
