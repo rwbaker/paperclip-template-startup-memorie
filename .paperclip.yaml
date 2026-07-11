@@ -14,6 +14,26 @@ agents:
     adapter:
       type: claude
       model: claude-opus-4-8
+  growth-marketer:
+    adapter:
+      type: claude
+      model: claude-sonnet-5
+  seo-blog-lead:
+    adapter:
+      type: claude
+      model: claude-sonnet-5
+  lifecycle-marketer:
+    adapter:
+      type: claude
+      model: claude-sonnet-5
+  partnerships-pr:
+    adapter:
+      type: claude
+      model: claude-sonnet-5
+  paid-media-strategist:
+    adapter:
+      type: claude
+      model: claude-opus-4-8
 
 # Heartbeat routines (scheduled operations). Filled in Task 10.
 routines: {}
