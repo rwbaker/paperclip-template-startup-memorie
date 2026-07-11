@@ -1,0 +1,10 @@
+schema: paperclip/v1
+
+# LLM adapters, one per agent. Filled in Tasks 4-8.
+agents: {}
+
+# Heartbeat routines (scheduled operations). Filled in Task 10.
+routines: {}
+
+# Human approval gates. Filled in Task 11.
+approval_policies: {}

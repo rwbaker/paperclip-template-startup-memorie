@@ -1,0 +1,14 @@
+{
+  "name": "memorie-company",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node validate.mjs",
+    "test": "node validate.mjs --selftest && node validate.mjs"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "yaml": "^2.5.0"
+  }
+}
