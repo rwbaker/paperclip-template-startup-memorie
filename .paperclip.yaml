@@ -42,7 +42,7 @@ agents:
       env:
         ZERNIO_API_KEY:
           kind: secret
-          requirement: required
+          requirement: optional
   brand-designer:
     adapter:
       type: claude
@@ -59,10 +59,10 @@ agents:
       env:
         ZERNIO_API_KEY:
           kind: secret
-          requirement: required
+          requirement: optional
         LOOPS_API_KEY:
           kind: secret
-          requirement: required
+          requirement: optional
   support:
     adapter:
       type: claude
