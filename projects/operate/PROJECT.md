@@ -3,7 +3,7 @@ name: Operate & Grow Memorie
 description: The always-on operating rhythm — daily execution, weekly coordination, the 8-week burst cycle, and monthly audits.
 slug: operate
 schema: agentcompanies/v1
-owner: gm
+owner: ceo
 ---
 
 # Operate & Grow Memorie

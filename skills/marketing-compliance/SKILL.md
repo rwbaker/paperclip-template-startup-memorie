@@ -18,4 +18,4 @@ description: Marketing-law rules — TCPA (SMS), CAN-SPAM/GDPR (email), FTC (par
   content; our outreach templates state this requirement explicitly.
 - **Monthly audit:** the Librarian samples published content, live sequences,
   and outreach threads against these rules; findings go in the audit trail and
-  the GM's digest.
+  the CEO's digest.

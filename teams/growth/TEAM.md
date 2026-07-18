@@ -3,7 +3,7 @@ name: Growth Team
 description: The zero-to-scale engine — trends, SEO, lifecycle, partnerships, paid readiness — led by the CMO.
 slug: growth
 schema: agentcompanies/v1
-manager: ../../agents/cmo/AGENTS.md
+manager: cmo
 ---
 
 # Growth Team

@@ -17,6 +17,6 @@ NEVER, in any content, reply, email, or outreach:
 - Guarantees ("never forget again" as a literal promise). Aspirational
   taglines from the approved brand kit are fine.
 
-If a draft trips any rule: do not publish; fix or escalate to the GM with the
+If a draft trips any rule: do not publish; fix or escalate to the CEO with the
 draft + the rule tripped. If found post-publish: unpublish immediately, emit
 `alert.needs_attention` (critical), record the incident in the audit trail.

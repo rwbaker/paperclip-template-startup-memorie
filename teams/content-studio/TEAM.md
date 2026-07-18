@@ -3,7 +3,7 @@ name: Content Studio
 description: Production and brand — writing, publishing, engagement, and Figma-based imagery.
 slug: content-studio
 schema: agentcompanies/v1
-manager: ../../agents/cmo/AGENTS.md
+manager: cmo
 ---
 
 # Content Studio

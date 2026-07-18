@@ -19,8 +19,7 @@ tags:
   - operating-company
   - memorie
 metadata:
-  designSpec: ../company-template/docs/superpowers/specs/2026-07-10-memorie-operating-company-design.md
-  template: sgnl-operating-company/v1
+  template: sgnl-operating-company/v2
 ---
 
 # Memorie Operating Company

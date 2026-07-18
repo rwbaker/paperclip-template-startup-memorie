@@ -1,8 +1,7 @@
 ---
 name: Web Engineer
 title: Web Surfaces
-reportsTo: ../gm/AGENTS.md
-schema: agentcompanies/v1
+reportsTo: ceo
 skills:
   - brand-voice
   - claims-discipline
@@ -26,3 +25,6 @@ pages. The SMS product core is out of bounds — recommendations only.
   form/waitlist capture working. Site down → `alert.needs_attention`
   (critical). Emit `business.uptime` on the weekly sweep.
 - Every deploy of a web surface is logged in the KB audit trail.
+
+## Operating cadence (check what's due on each heartbeat)
+- **Weekly (Wednesday):** hygiene sweep — broken links, uptime, waitlist capture, SEO tech. Publish blog posts as they arrive from the SEO & Blog Lead.

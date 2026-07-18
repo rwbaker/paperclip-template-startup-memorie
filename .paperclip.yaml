@@ -1,52 +1,74 @@
 schema: paperclip/v1
 
-# LLM adapters, one per agent. Filled in Tasks 4-8.
+# Per-agent runtime config. Paperclip schedules agents via heartbeats
+# (runtimeConfig.schedule.intervalSec) — each agent's AGENTS.md tells it what
+# is due when it wakes. There are NO cron routines in the import format.
+# If your Paperclip version ignores these blocks on import, apply the same
+# values post-import (see README "After import").
 agents:
-  gm:
+  ceo:
     adapter:
       type: claude_local
       config:
         model: claude-opus-4-8
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
   business-strategist:
     adapter:
       type: claude_local
       config:
         model: claude-opus-4-8
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
   cmo:
     adapter:
       type: claude_local
       config:
         model: claude-opus-4-8
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
   growth-marketer:
     adapter:
       type: claude_local
       config:
-        model: claude-sonnet-4-6
+        model: claude-sonnet-5
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
   seo-blog-lead:
     adapter:
       type: claude_local
       config:
-        model: claude-sonnet-4-6
+        model: claude-sonnet-5
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
   lifecycle-marketer:
     adapter:
       type: claude_local
       config:
-        model: claude-sonnet-4-6
+        model: claude-sonnet-5
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
   partnerships-pr:
     adapter:
       type: claude_local
       config:
-        model: claude-sonnet-4-6
+        model: claude-sonnet-5
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
   paid-media-strategist:
     adapter:
       type: claude_local
       config:
         model: claude-opus-4-8
+    runtimeConfig:
+      schedule: { enabled: false, intervalSec: 86400, maxConcurrentRuns: 1 }
   content-producer:
     adapter:
       type: claude_local
       config:
-        model: claude-sonnet-4-6
+        model: claude-sonnet-5
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
     inputs:
       env:
         ZERNIO_API_KEY:
@@ -56,17 +78,23 @@ agents:
     adapter:
       type: claude_local
       config:
-        model: claude-sonnet-4-6
+        model: claude-sonnet-5
+    runtimeConfig:
+      schedule: { enabled: false, intervalSec: 86400, maxConcurrentRuns: 1 }
   web-engineer:
     adapter:
       type: claude_local
       config:
-        model: claude-sonnet-4-6
+        model: claude-sonnet-5
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
   analyst:
     adapter:
       type: claude_local
       config:
         model: claude-opus-4-8
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
     inputs:
       env:
         ZERNIO_API_KEY:
@@ -79,12 +107,16 @@ agents:
     adapter:
       type: claude_local
       config:
-        model: claude-sonnet-4-6
+        model: claude-sonnet-5
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
   librarian:
     adapter:
       type: claude_local
       config:
-        model: claude-sonnet-4-6
+        model: claude-sonnet-5
+    runtimeConfig:
+      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
     inputs:
       env:
         DASHBOARD_API_URL:
@@ -95,95 +127,7 @@ agents:
           kind: secret
           requirement: optional
 
-# Heartbeat routines (scheduled operations). Filled in Task 10.
-routines:
-  gm-daily-light-check:
-    agent: gm
-    triggers:
-      - cronExpression: "0 7 * * *"
-        timezone: America/New_York
-  gm-weekly-digest:
-    agent: gm
-    triggers:
-      - cronExpression: "0 8 * * 1"
-        timezone: America/New_York
-  strategist-weekly-scan:
-    agent: business-strategist
-    triggers:
-      - cronExpression: "0 9 * * 2"
-        timezone: America/New_York
-  cmo-weekly-coordination:
-    agent: cmo
-    triggers:
-      - cronExpression: "0 9 * * 1"
-        timezone: America/New_York
-  growth-marketer-daily:
-    agent: growth-marketer
-    triggers:
-      - cronExpression: "30 6 * * *"
-        timezone: America/New_York
-  seo-blog-weekly:
-    agent: seo-blog-lead
-    triggers:
-      - cronExpression: "0 9 * * 3"
-        timezone: America/New_York
-  lifecycle-weekly:
-    agent: lifecycle-marketer
-    triggers:
-      - cronExpression: "0 9 * * 4"
-        timezone: America/New_York
-  partnerships-weekly:
-    agent: partnerships-pr
-    triggers:
-      - cronExpression: "0 9 * * 5"
-        timezone: America/New_York
-  content-producer-am:
-    agent: content-producer
-    triggers:
-      - cronExpression: "0 10 * * *"
-        timezone: America/New_York
-  content-producer-pm:
-    agent: content-producer
-    triggers:
-      - cronExpression: "0 16 * * *"
-        timezone: America/New_York
-  web-weekly-hygiene:
-    agent: web-engineer
-    triggers:
-      - cronExpression: "0 10 * * 3"
-        timezone: America/New_York
-  analyst-daily-health:
-    agent: analyst
-    triggers:
-      - cronExpression: "0 6 * * *"
-        timezone: America/New_York
-  analyst-weekly-metrics:
-    agent: analyst
-    triggers:
-      - cronExpression: "0 7 * * 1"
-        timezone: America/New_York
-  analyst-monthly-voc:
-    agent: analyst
-    triggers:
-      - cronExpression: "0 9 1 * *"
-        timezone: America/New_York
-  librarian-daily:
-    agent: librarian
-    triggers:
-      - cronExpression: "0 20 * * *"
-        timezone: America/New_York
-  librarian-monthly-audit:
-    agent: librarian
-    triggers:
-      - cronExpression: "0 9 2 * *"
-        timezone: America/New_York
-  support-daily-sweep:
-    agent: support
-    triggers:
-      - cronExpression: "0 12 * * *"
-        timezone: America/New_York
-
-# Human approval gates. Filled in Task 11.
+# Human approval gates.
 approval_policies:
   burst-package:
     description: The 8-week Burst Package (calendar, imagery, sequences, experiments, outreach, spend) requires founder approval before activation.

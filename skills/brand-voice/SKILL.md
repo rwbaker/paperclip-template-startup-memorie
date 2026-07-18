@@ -21,4 +21,4 @@ respectful, zero condescension, never clinical; caregivers — steady,
 dignified, extra care (they carry heavy things).
 
 The Librarian runs a monthly drift audit of published content against this
-file; drift findings go to the GM digest.
+file; drift findings go to the CEO digest.
