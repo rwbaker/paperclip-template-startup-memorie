@@ -35,16 +35,19 @@ npx paperclipai company import --from .
    on-demand/disabled). If your Paperclip version ignored the
    `runtimeConfig` blocks on import, set them in each agent's
    Configuration tab.
-2. **Budgets** — set a company ceiling and per-agent caps
-   (`budgetMonthlyCents`, 100000 = $1,000):
+2. **Budgets** — this company runs **unbudgeted** (`budgetMonthlyCents:
+   null`), like the founder's other companies. Budgets are not part of the
+   template format, and an importer that defaults the absent value to `0`
+   creates a hard stop at zero tokens — so verify after import that company
+   and agent budgets read null/unset, and clear any `0`s:
    ```bash
    curl -X PATCH $PAPERCLIP_URL/api/companies/$COMPANY_ID/budgets \
-     -d '{"budgetMonthlyCents": 100000}'          # company: $1,000/mo
-   # per agent: 10000 ($100) for opus agents (ceo, cmo, business-strategist,
-   # analyst, paid-media-strategist), 5000 ($50) for the rest
+     -d '{"budgetMonthlyCents": null}'
    curl -X PATCH $PAPERCLIP_URL/api/agents/$AGENT_ID/budgets \
-     -d '{"budgetMonthlyCents": 10000}'
+     -d '{"budgetMonthlyCents": null}'
    ```
+   If your Paperclip version requires a limit, prefer a per-run cap of $25
+   (2500 cents) over monthly ceilings.
 3. **North-star goal** — create the company Goal "Grow the waitlist and
    convert it to active beta users" (the goals in `COMPANY.md` frontmatter
    are documentation; goal objects are created via the Goals API/UI).
