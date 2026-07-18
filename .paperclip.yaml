@@ -4,40 +4,49 @@ schema: paperclip/v1
 agents:
   gm:
     adapter:
-      type: claude
-      model: claude-opus-4-8
+      type: claude_local
+      config:
+        model: claude-opus-4-8
   business-strategist:
     adapter:
-      type: claude
-      model: claude-opus-4-8
+      type: claude_local
+      config:
+        model: claude-opus-4-8
   cmo:
     adapter:
-      type: claude
-      model: claude-opus-4-8
+      type: claude_local
+      config:
+        model: claude-opus-4-8
   growth-marketer:
     adapter:
-      type: claude
-      model: claude-sonnet-5
+      type: claude_local
+      config:
+        model: claude-sonnet-4-6
   seo-blog-lead:
     adapter:
-      type: claude
-      model: claude-sonnet-5
+      type: claude_local
+      config:
+        model: claude-sonnet-4-6
   lifecycle-marketer:
     adapter:
-      type: claude
-      model: claude-sonnet-5
+      type: claude_local
+      config:
+        model: claude-sonnet-4-6
   partnerships-pr:
     adapter:
-      type: claude
-      model: claude-sonnet-5
+      type: claude_local
+      config:
+        model: claude-sonnet-4-6
   paid-media-strategist:
     adapter:
-      type: claude
-      model: claude-opus-4-8
+      type: claude_local
+      config:
+        model: claude-opus-4-8
   content-producer:
     adapter:
-      type: claude
-      model: claude-sonnet-5
+      type: claude_local
+      config:
+        model: claude-sonnet-4-6
     inputs:
       env:
         ZERNIO_API_KEY:
@@ -45,16 +54,19 @@ agents:
           requirement: optional
   brand-designer:
     adapter:
-      type: claude
-      model: claude-sonnet-5
+      type: claude_local
+      config:
+        model: claude-sonnet-4-6
   web-engineer:
     adapter:
-      type: claude
-      model: claude-sonnet-5
+      type: claude_local
+      config:
+        model: claude-sonnet-4-6
   analyst:
     adapter:
-      type: claude
-      model: claude-opus-4-8
+      type: claude_local
+      config:
+        model: claude-opus-4-8
     inputs:
       env:
         ZERNIO_API_KEY:
@@ -65,12 +77,14 @@ agents:
           requirement: optional
   support:
     adapter:
-      type: claude
-      model: claude-sonnet-5
+      type: claude_local
+      config:
+        model: claude-sonnet-4-6
   librarian:
     adapter:
-      type: claude
-      model: claude-sonnet-5
+      type: claude_local
+      config:
+        model: claude-sonnet-4-6
     inputs:
       env:
         DASHBOARD_API_URL:
