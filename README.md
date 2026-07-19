@@ -13,8 +13,9 @@ canonical Paperclip company-template format (see
   matching the canonical import format.
 - **No cron routines.** Paperclip wakes agents on heartbeat intervals; each
   agent's `AGENTS.md` is its operating manual and carries an
-  "Operating cadence" section saying what's due daily/weekly/monthly. Suggested
-  heartbeat intervals ship in `.paperclip.yaml` (`runtimeConfig.schedule`).
+  "Operating cadence" section saying what's due daily/weekly/monthly.
+  Heartbeats are configured post-import (checklist below); `.paperclip.yaml`
+  is deliberately minimal — only adapters and approval gates.
 - 8-week burst cycle: founder approves one Burst Package (retro-first), then
   autopilot with 1–2 weekly flex slots and an evergreen fallback queue.
 - Four founder gates (the only 4 tasks in the template, all `gated`):
@@ -29,12 +30,11 @@ npx paperclipai company import --from .
 ```
 
 ## After import (5-minute checklist)
-1. **Heartbeat schedules** — confirm each agent's schedule matches the
-   intervals in `.paperclip.yaml` (hourly for daily-cadence agents, 6h for
-   weekly-cadence agents; Brand Designer and Paid Media Strategist are
-   on-demand/disabled). If your Paperclip version ignored the
-   `runtimeConfig` blocks on import, set them in each agent's
-   Configuration tab.
+1. **Heartbeats** — in each agent's Configuration tab enable the schedule:
+   hourly (3600s) for ceo, cmo, growth-marketer, content-producer, analyst,
+   support, librarian; 6h (21600s) for business-strategist, seo-blog-lead,
+   lifecycle-marketer, partnerships-pr, web-engineer; leave brand-designer
+   and paid-media-strategist disabled (on-demand/advisory).
 2. **Budgets** — this company runs **unbudgeted** (`budgetMonthlyCents:
    null`), like the founder's other companies. Budgets are not part of the
    template format, and an importer that defaults the absent value to `0`
@@ -51,8 +51,12 @@ npx paperclipai company import --from .
 3. **North-star goal** — create the company Goal "Grow the waitlist and
    convert it to active beta users" (the goals in `COMPANY.md` frontmatter
    are documentation; goal objects are created via the Goals API/UI).
-4. **Secrets** — provision `ZERNIO_API_KEY`, `LOOPS_API_KEY`,
-   `DASHBOARD_API_URL`, `DASHBOARD_API_KEY`, `REDDIT_API_CREDENTIALS`.
+4. **Secrets** — provision `DASHBOARD_API_URL` (full ingest endpoint,
+   including path), `DASHBOARD_API_KEY`, `ZERNIO_API_KEY`, `LOOPS_API_KEY`,
+   `REDDIT_API_CREDENTIALS` in this company's secrets (secrets are
+   company-scoped), then map the two dashboard vars on **all 14 agents**
+   (`"DASHBOARD_API_KEY": "$secret:DASHBOARD_API_KEY"`, same for URL) so
+   every agent can emit events live; the Librarian reconciles failures.
 
 ## Integrations (provision before first run)
 Zernio (publish/inbox/analytics; API key), Figma MCP + brand library, Loops

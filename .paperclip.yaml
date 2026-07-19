@@ -1,245 +1,79 @@
 schema: paperclip/v1
 
-# Per-agent runtime config. Paperclip schedules agents via heartbeats
-# (runtimeConfig.schedule.intervalSec) — each agent's AGENTS.md tells it what
-# is due when it wakes. There are NO cron routines in the import format.
-# If your Paperclip version ignores these blocks on import, apply the same
-# values post-import (see README "After import").
+# Deliberately minimal — only what the importer demonstrably reads.
+# Scheduling is per-agent heartbeats configured post-import (see README);
+# cadence lives in each agent's AGENTS.md. Budgets stay null (unbudgeted).
 agents:
   ceo:
     adapter:
       type: claude_local
       config:
         model: claude-opus-4-8
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   business-strategist:
     adapter:
       type: claude_local
       config:
         model: claude-opus-4-8
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   cmo:
     adapter:
       type: claude_local
       config:
         model: claude-opus-4-8
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   growth-marketer:
     adapter:
       type: claude_local
       config:
         model: claude-sonnet-5
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   seo-blog-lead:
     adapter:
       type: claude_local
       config:
         model: claude-sonnet-5
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   lifecycle-marketer:
     adapter:
       type: claude_local
       config:
         model: claude-sonnet-5
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   partnerships-pr:
     adapter:
       type: claude_local
       config:
         model: claude-sonnet-5
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   paid-media-strategist:
     adapter:
       type: claude_local
       config:
         model: claude-opus-4-8
-    runtimeConfig:
-      schedule: { enabled: false, intervalSec: 86400, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   content-producer:
     adapter:
       type: claude_local
       config:
         model: claude-sonnet-5
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        ZERNIO_API_KEY:
-          kind: secret
-          requirement: optional
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   brand-designer:
     adapter:
       type: claude_local
       config:
         model: claude-sonnet-5
-    runtimeConfig:
-      schedule: { enabled: false, intervalSec: 86400, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   web-engineer:
     adapter:
       type: claude_local
       config:
         model: claude-sonnet-5
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   analyst:
     adapter:
       type: claude_local
       config:
         model: claude-opus-4-8
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        ZERNIO_API_KEY:
-          kind: secret
-          requirement: optional
-        LOOPS_API_KEY:
-          kind: secret
-          requirement: optional
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   support:
     adapter:
       type: claude_local
       config:
         model: claude-sonnet-5
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
   librarian:
     adapter:
       type: claude_local
       config:
         model: claude-sonnet-5
-    runtimeConfig:
-      schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
-    inputs:
-      env:
-        DASHBOARD_API_URL:
-          kind: string
-          requirement: optional
-          default: ""
-        DASHBOARD_API_KEY:
-          kind: secret
-          requirement: optional
-
 
 # Human approval gates.
 approval_policies:
