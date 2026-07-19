@@ -13,6 +13,15 @@ agents:
         model: claude-opus-4-8
     runtimeConfig:
       schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   business-strategist:
     adapter:
       type: claude_local
@@ -20,6 +29,15 @@ agents:
         model: claude-opus-4-8
     runtimeConfig:
       schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   cmo:
     adapter:
       type: claude_local
@@ -27,6 +45,15 @@ agents:
         model: claude-opus-4-8
     runtimeConfig:
       schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   growth-marketer:
     adapter:
       type: claude_local
@@ -34,6 +61,15 @@ agents:
         model: claude-sonnet-5
     runtimeConfig:
       schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   seo-blog-lead:
     adapter:
       type: claude_local
@@ -41,6 +77,15 @@ agents:
         model: claude-sonnet-5
     runtimeConfig:
       schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   lifecycle-marketer:
     adapter:
       type: claude_local
@@ -48,6 +93,15 @@ agents:
         model: claude-sonnet-5
     runtimeConfig:
       schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   partnerships-pr:
     adapter:
       type: claude_local
@@ -55,6 +109,15 @@ agents:
         model: claude-sonnet-5
     runtimeConfig:
       schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   paid-media-strategist:
     adapter:
       type: claude_local
@@ -62,6 +125,15 @@ agents:
         model: claude-opus-4-8
     runtimeConfig:
       schedule: { enabled: false, intervalSec: 86400, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   content-producer:
     adapter:
       type: claude_local
@@ -74,6 +146,13 @@ agents:
         ZERNIO_API_KEY:
           kind: secret
           requirement: optional
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   brand-designer:
     adapter:
       type: claude_local
@@ -81,6 +160,15 @@ agents:
         model: claude-sonnet-5
     runtimeConfig:
       schedule: { enabled: false, intervalSec: 86400, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   web-engineer:
     adapter:
       type: claude_local
@@ -88,6 +176,15 @@ agents:
         model: claude-sonnet-5
     runtimeConfig:
       schedule: { enabled: true, intervalSec: 21600, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   analyst:
     adapter:
       type: claude_local
@@ -103,6 +200,13 @@ agents:
         LOOPS_API_KEY:
           kind: secret
           requirement: optional
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   support:
     adapter:
       type: claude_local
@@ -110,6 +214,15 @@ agents:
         model: claude-sonnet-5
     runtimeConfig:
       schedule: { enabled: true, intervalSec: 3600, maxConcurrentRuns: 1 }
+    inputs:
+      env:
+        DASHBOARD_API_URL:
+          kind: string
+          requirement: optional
+          default: ""
+        DASHBOARD_API_KEY:
+          kind: secret
+          requirement: optional
   librarian:
     adapter:
       type: claude_local
@@ -126,6 +239,7 @@ agents:
         DASHBOARD_API_KEY:
           kind: secret
           requirement: optional
+
 
 # Human approval gates.
 approval_policies:
